@@ -1,0 +1,32 @@
+
+<div>
+  
+    <div class="child-container">
+        <h3>
+            Adding elements to the list  {{ moreRandomStuff }}
+        </h3>
+        <form>
+            <input type="text" name="newElementTxt" [placeholder]="randomText" [(ngModel)] ="twoWayBindingString">
+            <input type="submit" class="btn-small btn-red" [value]="buttonText" (click)="doStuff()">
+        </form>
+
+    </div>
+
+    <div class="child-container" [@contentTabs]="randomArray.length">
+        <h3>
+            The list of the stuff
+        </h3>
+        <p>
+            {{ twoWayBindingString }}  
+        </p>
+        <p>
+            Way too much time spent on CSS
+        </p>
+        <p *ngFor="let stuff of randomArray; let i = index" (click)="removeItem(i)">
+            {{ stuff }}
+        </p>
+          
+        
+    </div>
+    
+</div>

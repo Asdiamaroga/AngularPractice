@@ -1,1 +1,85 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+
+$base-theme:Default;
+$skin-name:seconSassTheme;
+$accent: #ff6358;
+$info: #3e80ed;
+$success: #5ec232;
+$warning: #fdce3e;
+$error: #d51923;
+$text-color: #ffffff;
+$bg-color: #333;
+$base-text: #f6f6f6;
+$base-bg: #444;
+$hovered-text: #ffffff;
+$hovered-bg: #555555;
+$selected-text: #ffffff;
+$selected-bg: #ff6358;
+$series-a: #ff6358;
+$series-b: #ffd246;
+$series-c: #78d237;
+$series-d: #28b4c8;
+$series-e: #2d73f5;
+$series-f: #aa46be;
+
+
+body{
+    background: $bg-color;
+    color: $text-color;
+}
+
+
+@mixin button-bg($bg) {
+    background: $bg;
+    &:hover {
+      background:darken($bg,8%);
+      transition: all 0.3s ease;
+    }
+    &:active {
+      background:darken($bg,25%);
+    } 
+  }
+  
+%no-borders{
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+}
+
+.btn {
+    @extend %no-borders;
+    color:white;
+    text-decoration:none;
+    padding:5px 10px;
+    border-radius:3px;
+    font-size:1.6em;
+}
+
+.btn-small {
+    @extend %no-borders;
+    color:white;
+    text-decoration:none;
+    padding:5px 10px;
+    border-radius:3px;
+    font-size:0.8em;
+}
+  
+.btn-green {
+     @include button-bg(#2ecc71);
+}
+  
+.btn-blue {
+     @include button-bg(#3498db);
+}
+  
+.btn-yellow{
+     @include button-bg(#f1c40f);
+}
+  
+.btn-red {
+     @include button-bg($selected-bg);
+}

@@ -1,0 +1,19 @@
+<p>
+  about works!
+  <button class="btn-small btn-red" type="button" (click)="goToTheHomePage()">{{ buttonText }}</button> 
+</p>
+
+
+<div >
+    <h3>
+        The list of the stuff
+    </h3>
+    <p>
+        Way too much time spent on CSS
+    </p>
+    <p *ngFor="let stuff of randomArray; let i = index" (click)="removeItem(i)">
+        {{ stuff }}
+    </p>
+      
+    
+</div>
